@@ -106,6 +106,5 @@ Keep the udmx cable away from powercables, its very sensitive to noise. It can c
 Native USB Microcontrollers (True uDMX)The Chip: Usually an Atmel AVR Atmega8 or Atmega88 microcontroller.
  How it works: The chip runs the open-source uDMX firmware. 
  It talks directly to your computer using native USB commands instead of pretending to be a serial COM port.
-Compatibility: Yes, this is a true uDMX device.
 
-The udmx dmx dongles, are often the cheap clones.
+The udmx dmx dongles, are often the cheap clones. dmx dongles with FTDI chips, wont work.
