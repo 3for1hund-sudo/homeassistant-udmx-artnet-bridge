@@ -102,4 +102,10 @@ This project is developed for personal use in Home Assistant smart-home environm
 
 ## advice
 Keep the udmx cable away from powercables, its very sensitive to noise. It can cause weird light behaviour. othervise the dongle is very stable.
-Just search on google for dmx dongle to shop, for one. Dongles using FTDI chip, are not compatible, with app.
+
+Native USB Microcontrollers (True uDMX)The Chip: Usually an Atmel AVR Atmega8 or Atmega88 microcontroller.
+ How it works: The chip runs the open-source uDMX firmware. 
+ It talks directly to your computer using native USB commands instead of pretending to be a serial COM port.
+Compatibility: Yes, this is a true uDMX device.
+
+The udmx dmx dongles, are often the cheap clones.
