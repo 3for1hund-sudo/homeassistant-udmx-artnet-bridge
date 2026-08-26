@@ -102,3 +102,4 @@ This project is developed for personal use in Home Assistant smart-home environm
 
 ## advice
 Keep the udmx cable away from powercables, its very sensitive to noise. It can cause weird light behaviour. othervise the dongle is very stable.
+Just search on google for dmx dongle to shop, for one. Dongles using FTDI chip, are not compatible, with app.
