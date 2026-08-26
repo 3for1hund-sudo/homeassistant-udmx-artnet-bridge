@@ -108,3 +108,4 @@ Native USB Microcontrollers (True uDMX)The Chip: Usually an Atmel AVR Atmega8 or
  It talks directly to your computer using native USB commands instead of pretending to be a serial COM port.
 
 The udmx dmx dongles, are often the cheap clones. dmx dongles with FTDI chips, wont work.
+search aliexpress : uDMX 512 controller
