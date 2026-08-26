@@ -1,3 +1,0 @@
-C:\DMXtoMQQT - Kopi\SolarController\bin\Release\net9.0\linux-arm64\publish\uDMXtoMQTT.pdb
-C:\DMXtoMQQT - Kopi\SolarController\bin\Release\net9.0\linux-arm64\publish\MicroMvvm.pdb
-C:\DMXtoMQQT - Kopi\SolarController\bin\Release\net9.0\linux-arm64\publish\uDMXtoMQTT
