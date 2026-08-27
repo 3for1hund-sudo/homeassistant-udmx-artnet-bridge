@@ -1,7 +1,7 @@
-name: "uDMX to MQTT Gateway"
-description: "A universal Home Assistant add-on that bridges a physical uDMX USB dongle to an MQTT network for real-time DMX lighting control."
+name: "HA uDMX & Art-Net to MQTT Gateway"
+description: "A hybrid Home Assistant app that bridges a physical uDMX USB dongle and Art-Net nodes to an MQTT network for real-time DMX lighting control."
 version: "1.1.6"
-slug: "udmx_to_mqtt"
+slug: "homeassistant_udmx_artnet_bridge"
 arch:
   - aarch64
   - amd64
@@ -22,12 +22,17 @@ options:
   number_of_channels: 19
   fade_stepsize: 10
   colormorph_fade_stepsize: 10
+  artnet_target_ip: "255.255.255.255"
+  artnet_enabled: false
+  artnet_universe: 0
   fixtures:
     - name: "udestue_skab"
       start_channel: 0
       type: "RGBW"
       control_topic: "rgbw/control/"
       publish_topic: "rgbw/publish/"
+      colormorph_random_color: true
+      colormorph_speed: 25
       colors:
         - name: "black"
           r: 0
@@ -114,6 +119,8 @@ options:
       type: "RGBW"
       control_topic: "rgbw/control/"
       publish_topic: "rgbw/publish/"
+      colormorph_random_color: false
+      colormorph_speed: 100
       colors:
         - name: "black"
           r: 0
@@ -200,6 +207,8 @@ options:
       type: "RGBW"
       control_topic: "rgbw/control/"
       publish_topic: "rgbw/publish/"
+      colormorph_random_color: false
+      colormorph_speed: 100
       colors:
         - name: "black"
           r: 0
@@ -286,6 +295,8 @@ options:
       type: "RGBW"
       control_topic: "rgbw/control/"
       publish_topic: "rgbw/publish/"
+      colormorph_random_color: false
+      colormorph_speed: 100
       colors:
         - name: "black"
           r: 0
@@ -372,6 +383,8 @@ options:
       type: "RGB"
       control_topic: "rgb/control/"
       publish_topic: "rgbw/publish/"
+      colormorph_random_color: false
+      colormorph_speed: 100
       colors:
         - name: "black"
           r: 0
@@ -430,10 +443,12 @@ options:
           r: 128
           g: 0
           b: 128
+          w: 0
         - name: "teal"
           r: 0
           g: 128
           b: 128
+          w: 0
         - name: "navy"
           r: 0
           g: 0
@@ -446,15 +461,31 @@ schema:
   number_of_channels: int(1,512)
   fade_stepsize: int
   colormorph_fade_stepsize: int
+  artnet_target_ip: str
+  artnet_enabled: bool
+  artnet_universe: int(0,15)
   fixtures:
     - name: str
       start_channel: int(0,511)
       type: list(Single|RGB|RGBW|RGBWW|Dimmer)
       control_topic: str?
       publish_topic: str?
+      colormorph_random_color: bool?
+      colormorph_speed: int(1,1000)?
       colors:
         - name: str
           r: int(0,255)
           g: int(0,255)
           b: int(0,255)
           w: int(0,255)?
+translations:
+  en:
+    configuration:
+      artnet_enabled:
+        name: "Enable Art-Net"
+        description: "experimental ARTNET, has not been testet"
+  da:
+    configuration:
+      artnet_enabled:
+        name: "Aktiver Art-Net"
+        description: "experimental ARTNET, has not been testet"

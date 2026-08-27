@@ -1,14 +1,18 @@
-# uDMX to MQTT Gateway Add-on for Home Assistant
+# 🎛️ Home Assistant Hybrid uDMX & Art-Net to MQTT Gateway
 
-This Home Assistant Add-on acts as a gateway between a physical uDMX USB dongle and your MQTT network. It translates incoming MQTT commands into DMX light signals in real-time and features dynamic channel management via XML configuration.
+> ⚠️ **EARLY RELEASE / BETA:** This project is currently in an early release stage. While fully functional in our test environments, you may still encounter bugs or unexpected behavior. Use with caution and feel free to report issues!
 
-The application is completely **cross-platform (universal)** and runs seamlessly on both ARM64 (e.g., Raspberry Pi) and x86_64 (Intel/AMD) architectures.
+This Home Assistant App acts as a hybrid gateway between a physical uDMX USB dongle, network-based Art-Net nodes, and your MQTT network. It translates incoming MQTT commands into DMX light signals in real-time and features dynamic channel management via automatic XML configuration.
+
+The application is completely **cross-platform (universal)** and runs seamlessly on both `ARM64` (e.g., Raspberry Pi) and `x86_64` (Intel/AMD) architectures using a framework-dependent .NET 9 environment.
+
+---
 
 ## 🧠 Thoughts Behind the Project
 
 The main goal of this project is to provide the **ability to use cheap DMX LED controllers with Home Assistant**, allowing for budget-friendly smart home lighting integrations without needing expensive professional hardware.
 
-### ⚠️ Technical Limitations & Performance Tuning
+### ⚠️ Technical uDMX Limitations & Performance Tuning
 Because this setup utilizes a very affordable, entry-level uDMX dongle, there are certain hardware limitations you should be aware of:
 - **No Channel Ranges:** Due to device limitations, the application cannot use `setchannel` ranges. It updates individual channels directly.
 - **Memory Constraints:** The dongle handles data processing via limited internal memory resources.
@@ -24,39 +28,42 @@ While designed for LED fixtures, this gateway also allows you to **connect direc
 
 ---
 
-## 🚀 Features & Supported Color Modes
+## ✨ Features & Supported Color Modes
 
 The gateway bridge supports advanced dynamic effects through dedicated **`colormodes`** that can be triggered via MQTT:
 
 - **`fade`**: Smoothly fades transitions between different light scenes.
-- **`colormorph`**: Fades continuously between a predefined list of colors configured on the fixture. This mode can be set to transition either **randomly** or **sequentially**.
+- **`cmorph`** *(Color Morph)*: Fades continuously between a predefined list of colors configured on the fixture. This mode can be set to transition either **randomly** or **sequentially** with individual loop speeds per fixture.
 - **`pulse`**: Generates a pulsing effect with randomized brightness intensity using your currently selected color.
 - **`none`**: Clears and deselects any active effect, returning the fixture to standard static control.
 
 ### Core Architecture Features:
-- **Universal Architecture:** Runs effortlessly on any hardware platform using a framework-dependent .NET 9 environment.
-- **Dynamic DMX Configuration:** Automatically generates the internal `default.cfg` XML structure based on your Home Assistant UI options using an integrated Python script.
+- **Hybrid Hardware Engine:** Transmits data to physical uDMX hardware and streams network Art-Net broadcast/unicast packets simultaneously.
+- **Thread-Safe Core:** Fully protected using mutex locking to eliminate race conditions or stalls between incoming MQTT packets and the high-speed DMX render loop.
+- **Art-Net Disconnected Fallback:** Built on an asynchronous network socket layer (`SendAsync`). If no physical Art-Net node is present on your network, packets drop harmlessly without causing thread blocks or slowing down the uDMX loop timing.
 - **RGBGROUP Sub-channel Support:** Smart handling of multi-channel fixtures (RGB, RGBW, RGBWW) where the master channel automatically links and configures the subsequent sub-channels.
 
 ---
 
 ## 🛠️ Installation & Setup
 
-1. In Home Assistant, navigate to **Settings** -> **Apps** -> **App Store (click install app)**.
+1. In Home Assistant, navigate to **Settings** -> **Apps** -> **App Store**.
 2. Click the three dots in the top-right corner and select **Repositories**.
-3. Paste your GitHub repository URL (e.g., `https://github.com`) and click **Add**.
+3. Paste your GitHub repository URL and click **Add**.
 4. Find **uDMX to MQTT Gateway** in the store, click it, and press **Install**.
 
 ### ⚠️ Critical Step: Disable Protected Mode
-Before starting the add-on, you **must disable Protected Mode**, otherwise the application will be blocked from accessing the host's USB controller and your uDMX dongle will not connect:
-1. Go to the **uDMX to MQTT Gateway** add-on page in Home Assistant.
-2. In the **Info** tab, locate the **Protected mode** (Beskyttet tilstand) toggle.
+Before starting the app, you **must disable Protected Mode**, otherwise the application will be blocked from accessing the host's USB controller layer, and your physical uDMX dongle will fail to open:
+1. Go to the **uDMX to MQTT Gateway** app page in Home Assistant.
+2. In the **Info** tab, locate the **Protected mode** *(Beskyttet tilstand)* toggle.
 3. Turn the toggle **OFF**.
-4. Click **Start** to run the add-on.
+4. Click **Start** to run the app.
+
+---
 
 ## ⚙️ Configuration via Home Assistant UI
 
-Configure your gateway options directly in the "Configuration" tab of the Add-on. Below is an example configuration:
+Configure your gateway options directly in the "Configuration" tab of the App. Below is an example configuration supporting the optional Art-Net network attributes:
 
 ```yaml
 mqtt_server_ip: "192.168.1.51"
@@ -65,13 +72,20 @@ mqtt_server_user: "mqtttoudmx"
 mqtt_server_password: "your_secure_password"
 fade_stepsize: 10
 colormorph_fade_stepsize: 10
+artnet_target_ip: "255.255.255.255"
+artnet_enabled: false
+artnet_universe: 0
 fixtures:
   - name: "conservatory_cabinet"
     start_channel: 0
     type: "RGBW"
+    colormorph_random_color: true
+    colormorph_speed: 25
   - name: "conservatory_spot"
     start_channel: 16
     type: "RGB"
+    colormorph_random_color: false
+    colormorph_speed: 100
 ```
 
 ### Supported Fixture Types (`type`):
@@ -80,32 +94,27 @@ fixtures:
 - `RGBW` (4 DMX channels)
 - `RGBWW` (5 DMX channels)
 
+---
+
 ## 📐 XML Channel Logic (RGBGROUP)
 
-When the add-on starts, the internal Python script dynamically calculates the total channel requirement and compiles the `default.cfg` file.
+When the app starts, the internal Python script dynamically calculates the total channel requirement and compiles the `default.cfg` XML structure.
 
-If you define a fixture like an **`RGBW` light on channel 0**, the script automatically reserves the next three slots (channels 1, 2, and 3) as helper channels. In the generated XML file, it translates to:
+If you define an **`RGBW` light on channel 0**, the script automatically reserves the next three slots (channels 1, 2, and 3) as helper channels. In the generated XML file, it translates to:
 
-- **Channel 0 (Master):** Gets assigned the type `RGBW`, custom color arrays, MQTT control topics (`rgbw/control/`), and colormorph settings.
-- **Channels 1, 2, and 3 (Sub-channels):** Automatically created with the type `RGBGROUP0`, linking them directly to master channel 0 so the C# application knows they belong together.
+- **Channel 0 (Master):** Gets assigned the type `RGBW`, custom color arrays, MQTT control topics, and specific colormorph speeds.
+- **Channels 1, 2, and 3 (Sub-channels):** Automatically created with the type `RGBGROUP0`, linking them directly to master channel 0 so the C# application knows they form a single hardware unit.
 
-## 💻 Local Testing on Windows (Visual Studio)
+---
 
-You can easily run and debug this application locally on your Windows PC. It will connect to your live Home Assistant Raspberry Pi MQTT broker over the network for real-time testing:
+## 💡 Hardware Procurement & Installation Advice
 
-1. Set the solution platform dropdown in the top toolbar of Visual Studio to **`Any CPU`**.
-2. Run the project in **Debug** or **Release** mode to test MQTT logic and console outputs.
-3. Every time you compile a **Release build**, the project automatically outputs a clean, cross-platform package to your `bin/Release/net9.0/publish/` folder. This includes all required `.dll` dependencies and the critical `uDMXtoMQTT.runtimeconfig.json` file. Only the contents of this publish folder need to be copied to your Raspberry Pi.
+- **Noise Sensitivity:** Keep the physical uDMX cable isolated and completely **away from high-voltage AC power cables**. The underlying differential line chips are very sensitive to EM noise, which can cause erratic light flickering. Kept shielded, the dongle is incredibly stable.
+- **Chipset Compatibility:** This gateway is built specifically for **Native USB Microcontrollers (True uDMX)**, which usually run an open-source firmware flashed onto an **Atmel AVR ATmega8** or **ATmega88** microcontroller. It talks directly to your computer using native USB commands instead of pretending to be a serial COM port.
+- **FTDI Incompatibility:** DMX dongles built around FTDI chips (like standard Enttec Open DMX cables) **will not work** with this app, as they rely on serial port bit-banging rather than native USB endpoint transfers.
+- **Sourcing:** Search marketplaces like AliExpress or eBay specifically for keywords like: `"uDMX 512 controller"`.
+
+---
 
 ## 📄 License
-This project is developed for personal use in Home Assistant smart-home environments.
-
-## advice
-Keep the udmx cable away from powercables, its very sensitive to noise. It can cause weird light behaviour. othervise the dongle is very stable.
-
-Native USB Microcontrollers (True uDMX)The Chip: Usually an Atmel AVR Atmega8 or Atmega88 microcontroller.
- How it works: The chip runs the open-source uDMX firmware. 
- It talks directly to your computer using native USB commands instead of pretending to be a serial COM port.
-
-The udmx dmx dongles, are often the cheap clones. dmx dongles with FTDI chips, wont work.
-search aliexpress : uDMX 512 controller
+This project is developed open-source for personal use in Home Assistant smart-home automation environments.
