@@ -42,7 +42,7 @@ The gateway bridge supports advanced dynamic effects through dedicated **`colorm
 
 ## 🛠️ Installation & Setup
 
-1. In Home Assistant, navigate to **Settings** -> **Add-ons** -> **Add-on Store**.
+1. In Home Assistant, navigate to **Settings** -> **Apps** -> **App Store (click install app)**.
 2. Click the three dots in the top-right corner and select **Repositories**.
 3. Paste your GitHub repository URL (e.g., `https://github.com`) and click **Add**.
 4. Find **uDMX to MQTT Gateway** in the store, click it, and press **Install**.
