@@ -1,6 +1,6 @@
 # 🎛️ Home Assistant Hybrid uDMX & Art-Net to MQTT Gateway
 
-> ⚠️ **EARLY RELEASE / BETA:** This project is currently in an early release stage. While fully functional in our test environments, you may still encounter bugs or unexpected behavior. Use with caution and feel free to report issues!
+> ⚠️ **BETA:** This project is currently in an early release stage. Use with caution.
 
 This Home Assistant App acts as a hybrid gateway between a physical uDMX USB dongle, network-based Art-Net nodes, and your MQTT network. It translates incoming MQTT commands into DMX light signals in real-time and features dynamic channel management via automatic XML configuration.
 
@@ -20,8 +20,11 @@ Because this setup utilizes a very affordable, entry-level uDMX dongle, there ar
   - If you need smooth **44 FPS** transitions (ideal for fast color fades), the hardware limit is approximately **25 channels**.
   - If you can accept a lower frame rate of **22 FPS**, you can expand your setup to around **50 channels**.
 
+### 🚀 Pure Art-Net Mode (Zero Limitations)
+If you **only use Art-Net** (without a physical uDMX dongle connected), the application bypasses all USB bus delays and throttling. In this mode, the gateway operates as a lightweight, lightning-fast network node, effortlessly maintaining **43+ FPS** over hundreds of channels.
+
 ### 📊 Real-Time FPS Monitoring
-To help you find the sweet spot for your hardware setup, **the application explicitly outputs the current effect render FPS directly to the log**. By monitoring the live log in the Home Assistant UI, you can instantly see if you are hitting the technical limit of your uDMX dongle or if your current channel pool allows for higher performance.
+To help you find the sweet spot for your hardware setup, **the application explicitly outputs the current effect render FPS directly to the log**. By monitoring the live log in the Home Assistant UI, you can instantly see if you are hitting the technical limit of your uDMX dongle or if your current configuration allows for higher performance.
 
 ### 🎭 Beyond LEDs: Stage Lights & Moving Heads
 While designed for LED fixtures, this gateway also allows you to **connect directly to professional stage lights**. For example, you can easily control the physical pan/tilt movements of a moving head lamp by configuring those specific moving channels as a standard `White` (`W` / `Single`) channel in Home Assistant. This lets you adjust the position values just like a dimmer slider!
@@ -30,7 +33,7 @@ While designed for LED fixtures, this gateway also allows you to **connect direc
 
 ## ✨ Features & Supported Color Modes
 
-The gateway bridge supports advanced dynamic effects through dedicated **`colormodes`** that can be triggered via MQTT:
+The gateway bridge supports advanced dynamic effects through dedicated MQTT **`colormodes`**:
 
 - **`fade`**: Smoothly fades transitions between different light scenes.
 - **`cmorph`** *(Color Morph)*: Fades continuously between a predefined list of colors configured on the fixture. This mode can be set to transition either **randomly** or **sequentially** with individual loop speeds per fixture.
@@ -73,7 +76,7 @@ mqtt_server_password: "your_secure_password"
 fade_stepsize: 10
 colormorph_fade_stepsize: 10
 artnet_target_ip: "255.255.255.255"
-artnet_enabled: false
+artnet_enabled: false # Set to true for Pure Art-Net Mode
 artnet_universe: 0
 fixtures:
   - name: "conservatory_cabinet"
@@ -99,7 +102,6 @@ fixtures:
 ## 📐 XML Channel Logic (RGBGROUP)
 
 When the app starts, the internal Python script dynamically calculates the total channel requirement and compiles the `default.cfg` XML structure.
-
 If you define an **`RGBW` light on channel 0**, the script automatically reserves the next three slots (channels 1, 2, and 3) as helper channels. In the generated XML file, it translates to:
 
 - **Channel 0 (Master):** Gets assigned the type `RGBW`, custom color arrays, MQTT control topics, and specific colormorph speeds.
