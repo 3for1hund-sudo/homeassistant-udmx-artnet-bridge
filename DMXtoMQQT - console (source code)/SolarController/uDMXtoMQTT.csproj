@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>    
+    <Platforms>AnyCPU;x64</Platforms>
+    <NoWarn>NU1701;MSB3245</NoWarn>
+    <!-- TVING VISUAL STUDIO TIL AT LAVE RUNTIMECONFIG FILEN -->
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="arrow.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LibUsbDotNet" Version="2.2.75" />
+    <PackageReference Include="M2Mqtt" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LibUsbDotNet">
+      <HintPath>LibUsbDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroMvvm">
+      <HintPath>MicroMvvm.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="arrow.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="default.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- Kører automatisk EFTER et succesfuldt Release-build og opretter publish-mappen fejlfrit -->
+  <Target Name="AutoPublishOnRelease" AfterTargets="Publish" Condition="'$(Configuration)' == 'Release'">
+    <Message Importance="High" Text="--- AUTOMATISK BYG AF UNIVERSAL DLL ER FÆRDIG! ---" />
+  </Target>
+
+  <!-- Fortæller Visual Studio, at når vi bygger i Release, skal den også køre Publish automatisk -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <PublishProfile>Default</PublishProfile>
+    <PublishDir>bin\Release\net9.0\publish\</PublishDir>
+  </PropertyGroup>
+
+
+</Project>

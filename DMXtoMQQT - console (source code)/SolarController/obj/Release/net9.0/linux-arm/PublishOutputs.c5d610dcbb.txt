@@ -1,0 +1,3 @@
+C:\DMXtoMQQT - Kopi\SolarController\bin\Release\net9.0\linux-arm\publish\uDMXtoMQQT.pdb
+C:\DMXtoMQQT - Kopi\SolarController\bin\Release\net9.0\linux-arm\publish\MicroMvvm.pdb
+C:\DMXtoMQQT - Kopi\SolarController\bin\Release\net9.0\linux-arm\publish\uDMXtoMQQT

@@ -1,0 +1,11 @@
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\default.cfg
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\uDMXtoMQTT.exe
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\uDMXtoMQTT.dll
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\uDMXtoMQTT.deps.json
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\uDMXtoMQTT.runtimeconfig.json
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\uDMXtoMQTT.pdb
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\LibUsbDotNet.LibUsbDotNet.dll
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\M2Mqtt.Net.dll
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\Newtonsoft.Json.dll
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\MicroMvvm.dll
+H:\designs\C#_projects\DMXtoMQQT - console\SolarController\bin\Release\net9.0\publish\MicroMvvm.pdb

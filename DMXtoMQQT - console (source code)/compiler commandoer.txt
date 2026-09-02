@@ -1,0 +1,9 @@
+stå i project folder.
+
+linux
+
+32bit os
+kør : dotnet publish -c Release -r linux-arm --self-contained -p:PublishSingleFile=true
+
+64bit os
+dotnet publish -c Release -r linux-arm64 --self-contained -p:PublishSingleFile=true

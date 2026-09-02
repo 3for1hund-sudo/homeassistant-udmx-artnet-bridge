@@ -1,0 +1,76 @@
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.exe
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.deps.json
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.runtimeconfig.json
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.runtimeconfig.dev.json
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.dll
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\ref\SolarController.dll
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.pdb
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\MicroMvvm.dll
+C:\Users\bjq8475\source\repos\SolarController\SolarController\bin\Debug\net5.0-windows\MicroMvvm.pdb
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.csprojAssemblyReference.cache
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController_MarkupCompile.cache
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController_MarkupCompile.lref
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.g.resources
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.AssemblyInfoInputs.cache
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.AssemblyInfo.cs
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.csproj.CoreCompileInputs.cache
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.csproj.CopyComplete
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.dll
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\ref\SolarController.dll
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.pdb
+C:\Users\bjq8475\source\repos\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.genruntimeconfig.cache
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.exe
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.deps.json
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.runtimeconfig.json
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.runtimeconfig.dev.json
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.dll
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\ref\SolarController.dll
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\SolarController.pdb
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\MicroMvvm.dll
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\bin\Debug\net5.0-windows\MicroMvvm.pdb
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.csprojAssemblyReference.cache
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\MainWindow.g.cs
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\App.g.cs
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController_MarkupCompile.cache
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController_MarkupCompile.lref
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\MainWindow.baml
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.g.resources
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.GeneratedMSBuildEditorConfig.editorconfig
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.AssemblyInfoInputs.cache
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.AssemblyInfo.cs
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.csproj.CoreCompileInputs.cache
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.csproj.CopyComplete
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.dll
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\ref\SolarController.dll
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.pdb
+H:\designs\Ufrdige\Hus styring\pwm controller\C#\SolarController\SolarController\obj\Debug\net5.0-windows\SolarController.genruntimeconfig.cache
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\SolarController.exe
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\SolarController.deps.json
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\SolarController.runtimeconfig.json
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\SolarController.runtimeconfig.dev.json
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\SolarController.dll
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\ref\SolarController.dll
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\SolarController.pdb
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\MicroMvvm.dll
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\MicroMvvm.pdb
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.csproj.AssemblyReference.cache
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\MainWindow.g.cs
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\App.g.cs
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController_MarkupCompile.cache
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController_MarkupCompile.lref
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\MainWindow.baml
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.g.resources
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.GeneratedMSBuildEditorConfig.editorconfig
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.AssemblyInfoInputs.cache
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.AssemblyInfo.cs
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.csproj.CoreCompileInputs.cache
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.csproj.CopyComplete
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.dll
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\ref\SolarController.dll
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.pdb
+H:\designs\C#_projects\DMXtoMQQT\SolarController\obj\Debug\net5.0-windows\SolarController.genruntimeconfig.cache
+H:\designs\C#_projects\DMXtoMQQT\SolarController\bin\Debug\net5.0-windows\LibUsbDotNet.dll
