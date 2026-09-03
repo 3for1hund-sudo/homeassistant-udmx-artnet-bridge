@@ -1,6 +1,6 @@
 name: "HA uDMX & Art-Net to MQTT Gateway"
 description: "A hybrid Home Assistant app that bridges a physical uDMX USB dongle and Art-Net nodes to an MQTT network for real-time DMX lighting control."
-version: "1.1.7"
+version: "1.1.8"
 slug: "homeassistant_udmx_artnet_bridge"
 arch:
   - aarch64

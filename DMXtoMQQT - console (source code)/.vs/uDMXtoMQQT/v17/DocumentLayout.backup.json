@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|h:\\designs\\c#_projects\\dmxtomqqt - console\\solarcontroller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|solutionrelative:solarcontroller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|h:\\designs\\c#_projects\\dmxtomqqt - console\\solarcontroller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|solutionrelative:solarcontroller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,12 +11,16 @@
       "RelativeMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|solutionrelative:solarcontroller\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|h:\\designs\\c#_projects\\dmxtomqqt - console\\solarcontroller\\dataclassgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|solutionrelative:solarcontroller\\dataclassgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|h:\\designs\\c#_projects\\dmxtomqqt - console\\solarcontroller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|solutionrelative:solarcontroller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|h:\\designs\\c#_projects\\dmxtomqqt - console\\solarcontroller\\sol_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|solutionrelative:solarcontroller\\sol_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|h:\\designs\\c#_projects\\dmxtomqqt - console\\solarcontroller\\dataclassgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|solutionrelative:solarcontroller\\dataclassgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA7C743A-DAEC-4FE0-8FEB-0533ECADB27F}|SolarController\\uDMXtoMQTT.csproj|h:\\designs\\c#_projects\\dmxtomqqt - console\\solarcontroller\\sol_objects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "config.cs",
               "DocumentMoniker": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\config.cs",
               "RelativeDocumentMoniker": "SolarController\\config.cs",
               "ToolTip": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\config.cs",
               "RelativeToolTip": "SolarController\\config.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAArwDAAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAJECAAAAAAAAAAAAAKsCAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-25T09:18:33.263Z",
               "IsPinned": true,
@@ -56,13 +56,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "controller.cs",
               "DocumentMoniker": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\controller.cs",
               "RelativeDocumentMoniker": "SolarController\\controller.cs",
-              "ToolTip": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\controller.cs*",
-              "RelativeToolTip": "SolarController\\controller.cs*",
-              "ViewState": "AgIAADUAAAAAAAAAAAAmwGgAAAAAAAAAAAAAAA==",
+              "ToolTip": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\controller.cs",
+              "RelativeToolTip": "SolarController\\controller.cs",
+              "ViewState": "AgIAAHIDAAAAAAAAAAAEwJADAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-26T18:15:54.034Z",
               "EditorCaption": ""
@@ -81,20 +81,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "program.cs",
               "DocumentMoniker": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\program.cs",
               "RelativeDocumentMoniker": "SolarController\\program.cs",
-              "ToolTip": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\program.cs*",
-              "RelativeToolTip": "SolarController\\program.cs*",
-              "ViewState": "AgIAACUAAAAAAAAAAAAqwFAAAAAgAAAAAAAAAA==",
+              "ToolTip": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\program.cs",
+              "RelativeToolTip": "SolarController\\program.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwE8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-18T14:20:50.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "dataclassgui.cs",
               "DocumentMoniker": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\dataclassgui.cs",
               "RelativeDocumentMoniker": "SolarController\\dataclassgui.cs",
@@ -102,18 +102,17 @@
               "RelativeToolTip": "SolarController\\dataclassgui.cs",
               "ViewState": "AgIAAM0CAAAAAAAAAAAQwMYCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T09:49:41.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-25T09:49:41.555Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "sol_class.cs",
               "DocumentMoniker": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\sol_class.cs",
               "RelativeDocumentMoniker": "SolarController\\sol_class.cs",
               "ToolTip": "H:\\designs\\C#_projects\\DMXtoMQQT - console\\SolarController\\sol_class.cs",
               "RelativeToolTip": "SolarController\\sol_class.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAwIQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAkwDcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-25T09:14:59.289Z",
               "EditorCaption": ""

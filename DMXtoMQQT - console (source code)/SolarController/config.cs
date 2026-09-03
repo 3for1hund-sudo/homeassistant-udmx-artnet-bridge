@@ -25,60 +25,60 @@ namespace uDMXtoMQTT
 
             const string config_file_name = "default.cfg";
 
-            const string xml_setup = "<setup>\n";
-            const string xml_setup_inv = "</setup>\n";
+            const string xml_setup = "<setup>";
+            const string xml_setup_inv = "</setup>";
             const string xml_mqqt_server_ip = "        <mqqt_server_ip>";
-            const string xml_mqqt_server_ip_inv = "</mqqt_server_ip>\n\n";
+            const string xml_mqqt_server_ip_inv = "</mqqt_server_ip>";
             const string xml_mqqt_server_port = "        <mqqt_server_port>";
-            const string xml_mqqt_server_port_inv = "</mqqt_server_port>\n\n";
+            const string xml_mqqt_server_port_inv = "</mqqt_server_port>";
             const string xml_mqqt_server_password = "        <mqqt_server_password>";
-            const string xml_mqqt_server_password_inv = "</mqqt_server_password>\n\n";
+            const string xml_mqqt_server_password_inv = "</mqqt_server_password>";
             const string xml_mqqt_server_user = "        <mqqt_server_user>";
-            const string xml_mqqt_server_user_inv = "</mqqt_server_user>\n\n";
+            const string xml_mqqt_server_user_inv = "</mqqt_server_user>";
             const string xml_number_of_channels = "        <number_of_channels>";
-            const string xml_number_of_channels_inv = "</number_of_channels>\n\n";
+            const string xml_number_of_channels_inv = "</number_of_channels>";
             const string xml_mqqt_device_id = "        <mqqt_device_id>";
-            const string xml_mqqt_device_id_inv = "</mqqt_device_id>\n\n";
+            const string xml_mqqt_device_id_inv = "</mqqt_device_id>";
             const string xml_fade_stepsize = "        <fade_stepsize>";
-            const string xml_fade_stepsize_inv = "</fade_stepsize>\n\n";
+            const string xml_fade_stepsize_inv = "</fade_stepsize>";
             const string xml_colormorph_fade_stepsize = "        <colormorph_fade_stepsize>";
-            const string xml_colormorph_fade_stepsize_inv = "</colormorph_fade_stepsize>\n\n";
+            const string xml_colormorph_fade_stepsize_inv = "</colormorph_fade_stepsize>";
 
 
             //const string xml_channel_info = "<channels>\n";
             //const string xml_channel_info_inv = "</channels>\n";
             const string xml_channel_name = "        <channel_name>";
-            const string xml_channel_name_inv = "</channel_name>\n";
+            const string xml_channel_name_inv = "</channel_name>";
             const string xml_subscribe_control_topic = "        <subscribe_control_topic>";
-            const string xml_subscribe_control_topic_inv = "</subscribe_control_topic>\n";
+            const string xml_subscribe_control_topic_inv = "</subscribe_control_topic>";
             const string xml_publish_topic = "        <publish_topic>";
-            const string xml_publish_topic_inv = "</publish_topic>\n";
+            const string xml_publish_topic_inv = "</publish_topic>";
             const string xml_led_type = "        <led_type>";
-            const string xml_led_type_inv = "</led_type>\n";
+            const string xml_led_type_inv = "</led_type>";
             const string xml_qos_level = "        <qos_level>";
-            const string xml_qos_level_inv = "</qos_level>\n";
+            const string xml_qos_level_inv = "</qos_level>";
             const string xml_colors_red_file = "        <colormorph_red>";
-            const string xml_colors_red_file_inv = "</colormorph_red>\n";
+            const string xml_colors_red_file_inv = "</colormorph_red>";
             const string xml_colors_green_file = "        <colormorph_green>";
-            const string xml_colors_green_file_inv = "</colormorph_green>\n";
+            const string xml_colors_green_file_inv = "</colormorph_green>";
             const string xml_colors_blue_file = "        <colormorph_blue>";
-            const string xml_colors_blue_file_inv = "</colormorph_blue>\n";
+            const string xml_colors_blue_file_inv = "</colormorph_blue>";
             const string xml_colors_white_file = "        <colormorph_white>";
-            const string xml_colors_white_file_inv = "</colormorph_white>\n";
+            const string xml_colors_white_file_inv = "</colormorph_white>";
             const string xml_colors_white2_file = "        <colormorph_white2>";
-            const string xml_colors_white2_file_inv = "</colormorph_white2>\n";
+            const string xml_colors_white2_file_inv = "</colormorph_white2>";
             const string xml_colormorph_name_file = "        <colors_name_file>";
-            const string xml_colormorph_name_file_inv = "</colors_name_file>\n";
+            const string xml_colormorph_name_file_inv = "</colors_name_file>";
             const string xml_colormorph_random_color_file = "        <colormorph_random_color>";
-            const string xml_colormorph_random_color_inv = "</colormorph_random_color>\n";
+            const string xml_colormorph_random_color_inv = "</colormorph_random_color>";
             const string xml_colormorph_speed = "        <colormorph_speed>";
-            const string xml_colormorph_speed_inv = "</colormorph_speed>\n\n";
+            const string xml_colormorph_speed_inv = "</colormorph_speed>";
             const string xml_artnet_target_ip = "        <artnet_target_ip>";
-            const string xml_artnet_target_ip_inv = "</artnet_target_ip>\n\n";
+            const string xml_artnet_target_ip_inv = "</artnet_target_ip>";
             const string xml_artnet_enabled = "        <artnet_enabled>";
-            const string xml_artnet_enabled_inv = "</artnet_enabled>\n\n";
+            const string xml_artnet_enabled_inv = "</artnet_enabled>";
             const string xml_artnet_universe = "        <artnet_universe>";
-            const string xml_artnet_universe_inv = "</artnet_universe>\n\n";
+            const string xml_artnet_universe_inv = "</artnet_universe>";
 
             string exeDirectory = AppContext.BaseDirectory;
 
@@ -91,7 +91,7 @@ namespace uDMXtoMQTT
                 data_read += file.ReadToEnd();
             }
 
-            //Console.WriteLine(data_read);
+           // Console.WriteLine(data_read);
 
             // isolate program setup data , from cfg
             start_of_string = data_read.LastIndexOf(xml_setup);
@@ -285,7 +285,7 @@ namespace uDMXtoMQTT
                             dmx_collection.data_object[0].colors_white_file[counter, counter2] = Convert.ToByte(split_array[counter2]);
                     }
 
-                    if (dmx_collection.data_object[0].led_type[counter] == "RGBWW")
+                    if ((dmx_collection.data_object[0].led_type[counter] == "RGBWW") && (temp_string.Contains(xml_colors_white2_file)))
                     {
 
                         // white2 colormorph, values into array

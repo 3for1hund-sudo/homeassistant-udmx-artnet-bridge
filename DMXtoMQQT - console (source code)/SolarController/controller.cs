@@ -735,9 +735,13 @@ namespace uDMXtoMQTT
                             dmx_collection.data_object[0].controller_state[topic_index + 1] = true;
                         if (dmx_collection.data_object[0].led_type[topic_index].Contains("B"))
                             dmx_collection.data_object[0].controller_state[topic_index + 2] = true;
-                        if (dmx_collection.data_object[0].led_type[topic_index].Contains("W"))
+                        if (dmx_collection.data_object[0].led_type[topic_index] == "W")
+                            dmx_collection.data_object[0].controller_state[topic_index] = true;
+
+                        if (dmx_collection.data_object[0].led_type[topic_index] == "RGBW" || dmx_collection.data_object[0].led_type[topic_index] == "RGBWW")
                             dmx_collection.data_object[0].controller_state[topic_index + 3] = true;
-                        if (dmx_collection.data_object[0].led_type[topic_index].Contains("w"))
+
+                        if (dmx_collection.data_object[0].led_type[topic_index] == "RGBWW")
                             dmx_collection.data_object[0].controller_state[topic_index + 4] = true;
 
                     }
@@ -751,9 +755,13 @@ namespace uDMXtoMQTT
                             dmx_collection.data_object[0].controller_state[topic_index + 1] = false;
                         if (dmx_collection.data_object[0].led_type[topic_index].Contains("B"))
                             dmx_collection.data_object[0].controller_state[topic_index + 2] = false;
-                        if (dmx_collection.data_object[0].led_type[topic_index].Contains("W"))
+                        
+                        if (dmx_collection.data_object[0].led_type[topic_index] == "W")
+                            dmx_collection.data_object[0].controller_state[topic_index] = false;
+                        if (dmx_collection.data_object[0].led_type[topic_index] == "RGBW" || dmx_collection.data_object[0].led_type[topic_index] == "RGBWW")
                             dmx_collection.data_object[0].controller_state[topic_index + 3] = false;
-                        if (dmx_collection.data_object[0].led_type[topic_index].Contains("w"))
+                        
+                        if (dmx_collection.data_object[0].led_type[topic_index] == "RGBWW")
                             dmx_collection.data_object[0].controller_state[topic_index + 4] = false;
                     }
                 }
@@ -765,7 +773,7 @@ namespace uDMXtoMQTT
                     split_array = mqtt_message.Split("color\":{\"");
 
                     // if red is present in color message
-                    if (split_array[1].Contains("r"))
+                    if (split_array[1].Contains("r\":"))
                     {
                         split_array2 = split_array[1].Split("r\":");
 
@@ -786,7 +794,7 @@ namespace uDMXtoMQTT
                     }
 
                     // if green is present in color message
-                    if (split_array[1].Contains("g"))
+                    if (split_array[1].Contains("g\":"))
                     {
                         split_array2 = split_array[1].Split("g\":");
 
@@ -807,7 +815,7 @@ namespace uDMXtoMQTT
                         }
                     }
                     // if blue is present in color message
-                    if (split_array[1].Contains("b"))
+                    if (split_array[1].Contains("b\":"))
                     {
                         split_array2 = split_array[1].Split("b\":");
 
@@ -829,7 +837,7 @@ namespace uDMXtoMQTT
                     }
 
                     // if warm white is present in color message
-                    if (split_array[1].Contains("w"))
+                    if (split_array[1].Contains("w\":"))
                     {
                         split_array2 = split_array[1].Split("w\":");
 
@@ -843,19 +851,28 @@ namespace uDMXtoMQTT
                         //if group is detected, there is an error in config file, dont change
                         if (!dmx_collection.data_object[0].led_type[topic_index].Contains("GROUP"))
                         {
-                            if (dmx_collection.data_object[0].led_type[topic_index].Contains("W"))
+                            if (dmx_collection.data_object[0].led_type[topic_index] == "RGBW")
                             {
                                 dmx_collection.data_object[0].current_led_value_new_target[topic_index + 3] = Convert.ToByte(warm_white);
                                 
                                 //store a copy of original value, for brightness adjust
                                 dmx_collection.data_object[0].brightness_whitemax_mixed_rgb[topic_index + 3] = Convert.ToByte(warm_white); 
                             }
+
+                            if (dmx_collection.data_object[0].led_type[topic_index] == "RGBWW")
+                            {
+                                dmx_collection.data_object[0].current_led_value_new_target[topic_index + 4] = Convert.ToByte(warm_white);
+
+                                //store a copy of original value, for brightness adjust
+                                dmx_collection.data_object[0].brightness_whitemax_mixed_rgb[topic_index + 4] = Convert.ToByte(warm_white);
+                            }
+
                         }
                     }
                     // if cold white is present in color message
-                    if (split_array[1].Contains("W"))
+                    if (split_array[1].Contains("c\":"))
                     {
-                        split_array2 = split_array[1].Split("W\":");
+                        split_array2 = split_array[1].Split("c\":");
 
                         //loop data into cold, if char is a number
                         for (index_pos = 0; index_pos < 3; index_pos++)
@@ -866,11 +883,11 @@ namespace uDMXtoMQTT
                         //if group is detected, there is an error in config file, dont change
                         if (!dmx_collection.data_object[0].led_type[topic_index].Contains("GROUP"))
                         {
-                            if (dmx_collection.data_object[0].led_type[topic_index].Contains("w"))
+                            if (dmx_collection.data_object[0].led_type[topic_index] == "RGBWW")
                             {
-                                dmx_collection.data_object[0].current_led_value_new_target[topic_index + 4] = Convert.ToByte(cold_white);
+                                dmx_collection.data_object[0].current_led_value_new_target[topic_index + 3] = Convert.ToByte(cold_white);
                                 //store a copy of original value, for brightness adjust
-                                dmx_collection.data_object[0].brightness_whitemax_mixed_rgb[topic_index + 4] = Convert.ToByte(cold_white);
+                                dmx_collection.data_object[0].brightness_whitemax_mixed_rgb[topic_index + 3] = Convert.ToByte(cold_white);
                             }
                         }
                     }
@@ -892,6 +909,10 @@ namespace uDMXtoMQTT
                            temp += split_array[1][index_pos];
                     }
                     dmx_collection.data_object[0].brightness_controller[topic_index] = Convert.ToByte(temp);
+
+                    if (dmx_collection.data_object[0].led_type[topic_index] == "W")
+                        dmx_collection.data_object[0].current_led_value_new_target[topic_index] = dmx_collection.data_object[0].brightness_controller[topic_index];
+                    else
                     brightness_adjust(topic_index,0);                
 
                 }
@@ -1131,37 +1152,37 @@ namespace uDMXtoMQTT
                 //else
                   //json_packet_message += "\"effect\":\"none\"}";
 
-                json_packet_message += "\"brightness\":" + Convert.ToString(dmx_collection.data_object[0].brightness_controller[current_channel]) + ",\"color\":{";
+                json_packet_message += "\"brightness\":" + Convert.ToString(dmx_collection.data_object[0].brightness_controller[current_channel]);
 
 
 
                 switch (dmx_collection.data_object[0].led_type[current_channel])
                 {
                     case "W":
-                        json_packet_message += "\"w\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + "},";
-
+                        //json_packet_message += "\"w\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + "}}";
+                        json_packet_message += "}";
                         break;
 
                     case "R":
-                        json_packet_message += "\"r\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + "},";
-
+                        //json_packet_message += "\"r\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + "}}";
+                        json_packet_message += "}";
                         break;
                     case "G":
-                        json_packet_message += "\"g\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + "},";
-
+                        //json_packet_message += "\"g\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + "}}";
+                        json_packet_message += "}";
                         break;
                     case "B":
-                        json_packet_message += "\"b\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + "},";
-
+                        //json_packet_message += "\"b\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + "}}";
+                        json_packet_message += "}";
                         break;
                     case "RGB":
-                        json_packet_message += "\"r\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + ",\"g\":" +
+                        json_packet_message += ",\"color\":{\"r\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + ",\"g\":" +
                            Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 1]) + ",\"b\":" +
                            Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 2]) + "}}";
 
                         break;
                     case "RGBW":
-                        json_packet_message += "\"r\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + ",\"g\":" +
+                        json_packet_message += ",\"color\":{\"r\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + ",\"g\":" +
                            Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 1]) + ",\"b\":" +
                            Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 2]) + ",\"w\":" +
                            Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 3]) + "}}";
@@ -1169,9 +1190,9 @@ namespace uDMXtoMQTT
                         break;
 
                     case "RGBWW":
-                        json_packet_message += "\"r\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + ",\"g\":" +
+                        json_packet_message += ",\"color\":{\"r\":" + Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel]) + ",\"g\":" +
                            Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 1]) + ",\"b\":" +
-                           Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 2]) + ",\"w\":" +
+                           Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 2]) + ",\"c\":" +
                            Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 3]) + ",\"w\":" +
                            Convert.ToString(dmx_collection.data_object[0].current_led_value_new_target[current_channel + 4]) + "}}";
                         break;
